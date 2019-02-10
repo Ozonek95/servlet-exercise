@@ -15,6 +15,7 @@ import java.util.Set;
 public class CalculationServlet extends HttpServlet {
 
     private static final String SESSION_SUM = "sum";
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -31,7 +32,7 @@ public class CalculationServlet extends HttpServlet {
             double currentSum = (double) session.getAttribute(SESSION_SUM);
             session.setAttribute(SESSION_SUM, currentSum + getSum(request));
         } else {
-            session.setAttribute(SESSION_SUM,getSum(request));
+            session.setAttribute(SESSION_SUM, getSum(request));
         }
     }
 
@@ -45,10 +46,8 @@ public class CalculationServlet extends HttpServlet {
                 try {
                     result += Double.parseDouble(s);
                 } catch (Exception ignored) {
-
                 }
             }
-
         }
         return result;
     }
